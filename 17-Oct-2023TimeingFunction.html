@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+  <button onclick="checkFunction()">start</button>
+   <button onclick="checkFunctionStop()">stop</button><br>
+
+   <input type="password" name="" id="userInp">
+   <button onclick="showPass">Show</button>
+</body>
+<script type="text/javascript">
+	let userInp = document.querySelector('#userInp');
+     const showPass = ()=>{
+         userInp.type = 'text';
+         setTimeout(hidePass,3000);
+     }
+
+     const hidePass = ()=>{
+     	userInp.type = 'password';
+     }
+
+
+
+
+
+
+
+
+	let timeVar;
+	const consoleFunction = ()=>{
+		console.log('checked');
+	}
+	const checkFunction = ()=>{
+		setTimeout(consoleFunction,5000);
+	}
+
+	const checkFunctionStop = ()=>{
+		clearTimeout(timeVar);
+	}
+
+
+
+</script>
+</html>
+
+
+<!-- setTimeout
+clerTimeout
+setInterval
+clearInterval -->

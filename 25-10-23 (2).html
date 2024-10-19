@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.main{
+			width: 800px;
+			margin: auto;
+		}
+		input{
+			width: 100%;
+		}
+		.spanDiv{
+			display: flex;
+			justify-content: space-between;
+			font-size: 25px;
+			font-weight: bold;
+		}
+		.spanDiv span{
+			border: 1px solid black;
+			padding: 10px 30px;
+		}
+		.output{
+			width: 500px;
+			margin: auto;
+			font-size: 25px;
+			font-weight: bold;
+		}
+		input[type="text"]{
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+  <div class="main">
+  	<div class="spanDiv">
+  		<span>00</span>
+  		<span>00</span>
+  		<span>00</span>
+  	</div>
+  	<div>
+  		 <input type="range" name="" min="10" max="1000" value="800">
+  		 <input type="text" name="">
+  	</div>
+  	<div class="output"></div>
+  </div>
+</body>
+<script type="text/javascript">
+	let input = document.querySelector('input[type="range"]');
+	let inputText = document.querySelector('input[type="text"]');
+	let output = document.querySelector('.output');
+	let spans = document.querySelectorAll('.spanDiv span');
+
+
+	input.addEventListener('input',()=>{
+		output.innerHTML = inputText.value;
+	})
+
+	spans[0].innerHTML = input.min;
+	spans[2].innerHTML = input.max;
+	spans[1].innerHTML = input.value;
+
+	input.addEventListener('change',()=>{
+		console.log('change')
+	})
+</script>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+    <div className='w-full h-[132px] flex justify-between items-center'>
+      <div><p className='text-[34px] font-[500] pl-[35px]'>This Just In</p></div>
+      <div className='tabs'>
+        <button onClick={() => handleTabClick('Women s')} className={activeTab === 'Women s' ? 'active' : ''} >Women s</button>
+        <button onClick={() => handleTabClick('Men s')} className={activeTab === 'Men s' ? 'active' : ''} 
+          >Men s</button>
+      </div>
+     </div>
+    <div className='tab-content'>
+      {activeTab === 'Women s' && <div><Slider {...settings} className='max-w-[95%] mx-auto '>
+      
+    <div className='img-1'>
+      <div className='container'>
+        <div className='box1'></div>
+        <div className='box2'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <div className='img-1'>
+      <div className='container'>
+        <div className='box-1'></div>
+        <div className='box-2'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <div className='img-1'>
+      <div className='container'>
+        <div className='box-3'></div>
+        <div className='box-4'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <div className='img-1'>
+      <div className='container'>
+        <div className='box-5'></div>
+        <div className='box-6'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <div className='img-1'>
+      <div className='container'>
+        <div className='box-7'></div>
+        <div className='box-8'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <div className='img-1'>
+      <div className='container'>
+        <div className='box-9'></div>
+        <div className='box-10'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <div className='img-1'>
+      <div className='container'>
+        <div className='box-11'></div>
+        <div className='box-12'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <div className='img-1'>
+      <div className='container'>
+        <div className='box-13'></div>
+        <div className='box-14'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <div className='img-1'>
+      <div className='container'>
+        <div className='box-15'></div>
+        <div className='box-16'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <div className='img-1'>
+      <div className='container'>
+        <div className='box-17'></div>
+        <div className='box-18'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <button type="button" class="slick-next"></button>
+     <button type="button" class="slick-prev"></button>
+    
+   </Slider></div>}
+      {activeTab === 'Men s' && <div><Slider {...settings} className='max-w-[95%] mx-auto '>
+    
+      <div className='img-1'>
+      <div className='container'>
+        <div className='box1'></div>
+        <div className='box2'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <div className='img-1'>
+      <div className='container'>
+        <div className='box-1'></div>
+        <div className='box-2'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <div className='img-1'>
+      <div className='container'>
+        <div className='box-3'></div>
+        <div className='box-4'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <div className='img-1'>
+      <div className='container'>
+        <div className='box-5'></div>
+        <div className='box-6'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <div className='img-1'>
+      <div className='container'>
+        <div className='box-7'></div>
+        <div className='box-8'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <div className='img-1'>
+      <div className='container'>
+        <div className='box-9'></div>
+        <div className='box-10'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <div className='img-1'>
+      <div className='container'>
+        <div className='box-11'></div>
+        <div className='box-12'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <div className='img-1'>
+      <div className='container'>
+        <div className='box-13'></div>
+        <div className='box-14'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <div className='img-1'>
+      <div className='container'>
+        <div className='box-15'></div>
+        <div className='box-16'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <div className='img-1'>
+      <div className='container'>
+        <div className='box-17'></div>
+        <div className='box-18'>
+          <div className='w-[95%] h-[40px] border-1 bg-[#FFFFFF] relative top-[410px] m-auto text-center pt-[8px] sub-hover'><span>Quick add</span>
+          <div className='relax'>
+           <ul className='flex justify-center gap-x-[15px] flex-wrap text-[16px] font-[400] '>
+           <li className='px-[15px]' >XXS</li>
+            <li className='px-[15px]'>XS</li>
+            <li className='px-[15px]'>S</li>
+            <li className='px-[15px]'>M</li>
+            <li className='px-[15px]'>L</li>
+            <li className='px-[15px]'>XL</li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        </div>
+     <div className='flex justify-between'>
+      <p className='text-[14px] text-[black] pt-[6px]'>The SeaCell™ Crewneck Cardigan in Dark Chocolate</p>
+     <span className='pt-[10px] pr-[20px]'><FaRegHeart /></span></div>
+     <span>$149.00</span>
+     <div className='btn-1'>
+      <div className='z-1'><span>1 colour</span></div>
+      <div className='z-2  relative right-[0px] bottom-[-5px] '>
+      <button className='w-[16px] h-[16px]  border-[1px] border-[black] rounded-[50%]  '>
+        <button className='w-[11px] h-[11px] bg-[black] rounded-[50%] relative bottom-[6px] '></button>
+      </button>
+      </div>
+      </div>
+     </div>
+     <button type="button" class="slick-next"></button>
+     <button type="button" class="slick-prev"></button>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.main{
+			width: 1000px;
+			padding: 20px;
+			margin: auto;
+			border: 4px double black;
+		}
+		.active{
+			background: lightgoldenrodyellow;
+			color: skyblue;
+			border: 4px double skyblue;
+		}
+	</style>
+</head>
+<body>
+<div class="main" id="myDiv">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</div>
+<button id="addClass">Add</button>
+<button id="removeClass">Remove</button>
+<button id="toggleClass">Toggle</button>
+</body>
+<script type="text/javascript">
+	let myDiv = document.getElementById('myDiv');
+	let addClass = document.getElementById('addClass');
+	let removeClass = document.getElementById('removeClass');
+	let toggleClass = document.getElementById('toggleClass');
+    
+	const classAdd = ()=>{
+		myDiv.classList.add('active')
+	}
+	const classRemove = ()=>{
+		myDiv.classList.remove('active')
+	}
+	const classToggle = ()=>{
+		myDiv.classList.toggle('active')
+	}
+
+
+	addClass.addEventListener('click',classAdd);
+	removeClass.addEventListener('click',classRemove);
+	toggleClass.addEventListener('click',classToggle);
+
+
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+     <input type="time" name="" id="timeInp"><br>	 
+     <input type="date" name="" id="dateInp"><br> 
+     <button onclick="setAlarm()">Set Alarm</button>
+     <button onclick="stopAlarm">stop</button>
+     <button>reset</button>
+     <button>snooz</button>
+</body>
+<script type="text/javascript">
+	let time = document.getElementById('timeInp');
+	let date = document.getElementById('dateInp');
+	let audio = new Audio('audio/Love Tone.mp3');
+
+	const setAlarm = ()=>{
+		time = time.value;
+		date = date.value;
+		let currentTime = new Date();
+		let userTime;
+
+		if(date == ''){
+           userTime = new Date(currentTime.toDateString() + ' ' +time);
+		}else{
+			userTime = new Date(date + ' ' +time);
+		}
+          let difference = userTime - currentTime;
+
+         setTimeout(playAlarm,difference);
+	};
+
+	const playAlarm = ()=>{
+		audio.loop = true;
+	}
+</script>
+</html>

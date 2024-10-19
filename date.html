@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+			<input type="time" name="" id="dateInp">
+			<button onclick="gatDate()">get date</button>
+</body>
+<script type="text/javascript">
+
+	const gatDate = ()=>{
+		let userDate = document.getElementById('dateInp').value;
+		// console.log(userDate);
+		// console.log(typeof(userDate));
+	}
+
+	let currentTime = new Date();
+
+	console.log(currentTime.getMilliseconds());
+    document.write(currentTime.getMilliseconds());
+
+
+</script>
+</html>
+toDateString()
+getTime()
+getDate()
+getFullYear() 
+getMonth()
+getHours()
+getMinutes()
+getSeconds()
+getMilliseconds()

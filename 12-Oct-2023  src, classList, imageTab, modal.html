@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.main{
+			width: 1000px;
+			margin: auto;
+			border: 6px double black;
+			border-radius: 4px;
+			overflow: hidden;
+		}
+	    .mainImg img{
+	    	width: 100%;
+	    	height: 70vh;
+	    	border-bottom: 1px solid black;
+	    }
+	    .imgDiv{
+	    	display: flex;
+	    	justify-content: space-between;
+	    	flex-wrap: wrap;
+	    	padding: 10px ;
+
+	    }
+	    .imgDiv img{
+	    	width: 12%;
+	    	border: 2px solid black;
+	    	cursor: pointer;
+
+	    }
+	</style>
+</head>
+<body>
+      <div class="main">
+      	<div class="mainImg">
+      		<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1699574400&semt=ais">
+      	</div>
+      	<div class="imgDiv">
+      		<img onclick="changeSrc(this)"src="https://as1.ftcdn.net/v2/jpg/05/23/57/76/1000_F_523577687_9B7Jn5sOMtZyYP2Oe5GyLxOQExJ2mwwE.jpg">
+      		<img onclick="changeSrc(this)"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUWgL4goG5e4iNQDXPjja60K7bd3c6T1nOZi833wZyWmsGSKZ0ReNq8aYRU1rEMvrbtp8&usqp=CAU">
+      		<img onclick="changeSrc(this)"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ57M2knnRNhoEY6IpVvQHGa_lnCAj37OX-FTC08zR0fXkIkvNCgNxvF55PDSRkAzkDrVM&usqp=CAU">
+      		<img onclick="changeSrc(this)"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFmYrblVeUNUFNbvrTUdwI-6BBJpofJGblTznDeBN_HdnqGGThUNzC5UWsnFj7S6mt6T0&usqp=CAU">
+      		<img onclick="changeSrc(this)"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8LXf78JU6HvwFiS-koHlGWFMuXemu4NJte_pZy5SRRLTeDsUv_iiOihvdwiU4seZee64&usqp=CAU">
+      		<img onclick="changeSrc(this)"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOzJu-VGSa_eeUyIR1G0VYraZ9M5gnswD7VPhTFVBLMaXuT8L1JXAk0e7cfrG2n6Lkj2I&usqp=CAU">
+      	</div>
+      </div>
+</body>
+<script type="text/javascript">
+	let mainImg = document.querySelector('.mainImg img');
+
+	function changeSrc(abc){
+     let currentSrc = abc.src;
+     //console.log(currentSrc);
+     mainImg.src = currentSrc;
+	}
+</script>
+</html>

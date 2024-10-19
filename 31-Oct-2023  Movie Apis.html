@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.dataDiv{
+			margin: auto;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.card{
+			width: 24%;
+			box-shadow: 0 0 5px 1px black;
+			margin-top: 10px;
+		}
+		.imgDiv{
+			overflow: hidden;
+		}
+
+		.card img{
+			width: 100%;
+			transition: 0.8s;
+		}
+		.card:hover img{
+			transform: scale(1.4);
+		}
+		.inputDiv{
+			padding: 20px 0;
+			text-align: center;
+		}
+		.inputDiv input{
+			padding: 15px 5px;
+			width: 70%;
+
+		}
+		.pagination{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 20px 0;
+			flex-direction: column;
+		}
+		.searchPage{
+			width: 150px;
+			position: relative;
+			margin: 10px 0;
+		}
+		.searchPage input{
+			padding: 10px 5px;
+			width: 100%;
+			border-radius: 4px;
+		}
+		.searchPage button{
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 100%;
+			background: black;
+			color: white;
+			font-size: 18px;
+			font-weight: bold;
+			border: none;
+			padding: 0 10px;
+			border-radius: 0 4px 4px 0;
+			cursor: pointer;
+		}
+		.paginationBtns button{
+			padding: 8px 20px;
+			font-size: 18px;
+			color: white;
+			border: 2px solid black;
+			font-weight: bold;
+			border-radius: 4px;
+			background: black;
+			margin: 0 5px;
+			cursor: pointer;
+		}
+		.paginationBtns button:hover{
+			background: white;
+			color: black;
+		}
+		.activePageBtn{
+			background: white !important;
+			color: black !important;
+		}
+		.overlay{
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.6);
+			z-index: 99;
+			transform: scale(0);
+		}
+		.popUp{
+			width: 60%;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			position: fixed;
+			background: red;
+			z-index: 999;
+			height: 300px;
+			display: flex;
+		}
+		.popUp>div{
+			width: 50%;
+		}
+</style>	
+</head>
+<body>
+     <div class="dataDiv">
+     	<div class="card">
+     		<div class="imgDiv">
+     			<div class=""></div>
+     		</div>
+     	</div>
+     </div>
+</body>
+</html>

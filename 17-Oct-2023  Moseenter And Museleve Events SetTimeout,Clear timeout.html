@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.main{
+			width: 500px;
+			height: 400px;
+			background: lightblue;
+			padding: 20px;
+		}
+		.main input{
+			width: 100%;
+			padding: 10px;
+			border-radius: 4px;
+			border: 2px solid black;
+			margin: 10px 0;
+		}
+		.main button{
+            padding: 10px 20px;
+            border-radius: 4px;
+            background: black;
+            color: wheat;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+		}
+	</style>
+</head>
+<body>
+     <div class="main">
+     	<input type="text" name="" id="nameInput"><br>
+     	<input type="number" name=""><br>
+     	<input type="email" name=""><br>
+     	<button id="myBtn" onclick="functionM()">save date</button>
+     </div>
+</body>
+<script type="text/javascript">
+	let div = document.querySelector('.main');
+	let myBtn = document.querySelector('#myBtn');
+	let nameInput = document.querySelector('#nameInput');
+
+	myBtn.addEventListener('mouseenter',()=>{
+		let value = nameInput.value;
+		if(value == ''){
+			myBtn.style.transform = 'translateX(200px)'
+		}
+	});
+	myBtn.addEventListener('mouseleave',()=>{
+
+			myBtn.style.transform = 'translateX(0)'
+		
+			
+		
+	});
+	const functionM = ()=>{
+		console.log('submitted');
+	}
+
+	div.addEventListener('mouseleave',()=>{
+        div.style.backgroundColor = 'yellow';
+	});
+
+</script>
+</html>

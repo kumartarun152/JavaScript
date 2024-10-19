@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.dataDiv{
+			margin: auto;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.card{
+			width: 24%;
+			box-shadow: 0 0 5px 1px black;
+			margin-top: 10px;
+		}
+		.imgDiv{
+			overflow: hidden;
+		}
+
+		.card img{
+			width: 100%;
+			transition: 0.8s;
+		}
+		.card:hover img{
+			transform: scale(1.4);
+		}
+		.inputDiv{
+			padding: 20px 0;
+			text-align: center;
+		}
+		.inputDiv input{
+			padding: 15px 5px;
+			width: 70%;
+
+		}
+		.pagination{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 20px 0;
+			flex-direction: column;
+		}
+		.searchPage{
+			width: 150px;
+			position: relative;
+			margin: 10px 0;
+		}
+		.searchPage input{
+			padding: 10px 5px;
+			width: 100%;
+			border-radius: 4px;
+		}
+		.searchPage button{
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 100%;
+			background: black;
+			color: white;
+			font-size: 18px;
+			font-weight: bold;
+			border: none;
+			padding: 0 10px;
+			border-radius: 0 4px 4px 0;
+			cursor: pointer;
+		}
+		.paginationBtns button{
+			padding: 8px 20px;
+			font-size: 18px;
+			color: white;
+			border: 2px solid black;
+			font-weight: bold;
+			border-radius: 4px;
+			background: black;
+			margin: 0 5px;
+			cursor: pointer;
+		}
+		.paginationBtns button:hover{
+			background: white;
+			color: black;
+		}
+		.activePageBtn{
+			background: white !important;
+			color: black !important;
+		}
+		.overlay{
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.6);
+			z-index: 99;
+			transform: scale(0);
+		}
+		.popUp{
+			width: 60%;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			position: fixed;
+			background: red;
+			z-index: 999;
+			height: 300px;
+			display: flex;
+		}
+		.popUp>div{
+			width: 50%;
+		}
+	</style>
+</head>
+<body>
+	<div class="overlay"></div>
+	<div class="popUp">
+		<div>
+			hello
+		</div>
+		<div>hello</div>
+	</div>
+	<div class="main">
+		<div class="inputDiv">
+			<input oninput="searchData()" type="text" name="" id="searchInp" placeholder="search a movie...">
+			<!-- <button onclick="searchData()">Search</button> -->
+		</div>
+		<div class="pagination">
+			<div class="searchPage">
+				<input type="text" name="" placeholder="page no." id="pageInput">
+				<button onclick="changePage()">Go to</button>
+			</div>
+			<div class="paginationBtns">
+				
+			</div>
+		</div>
+		<div class="dataDiv">
+			<div class="card">
+				<img src="https://image.tmdb.org/t/p/w1280/A4j8S6moJS2zNtRR8oWF08gRnL5.jpg">
+				<h1>Five Nights at Freddy's"</h1>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	const api = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc			&api_key=04c35731a5ee918f014970082a0088b1&page=1';
+	const searchApi = 'https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=fast';
+
+	const imgPath = 'https://image.tmdb.org/t/p/w1280';
+
+	const dataDiv = document.querySelector('.dataDiv');
+	const searchInp = document.querySelector('#searchInp');
+	const paginationBtns = document.querySelector('.paginationBtns');
+
+
+
+	const loadData =async (loader)=>{
+
+		const data =await fetch(loader);
+		const actualData =await data.json();
+		let {results, total_results} = actualData; // let results = actualData.results;
+
+
+		let allData = '';
+		results.map((item)=>{
+
+			let imgPathNew;
+			if(item.poster_path == null){
+				imgPathNew = 'https://image.tmdb.org/t/p/w1280/p8c0a159yKnpciQCFsR8BaC23po.jpg';
+			}else{
+				imgPathNew = imgPath + item.poster_path;
+			}
+
+		allData +=	`
+			<div class="card" onclick="openPopUp(${item.id})">
+			<div class="imgDiv">
+				<img src="${imgPathNew}">
+			</div>
+				<h1>${item.original_title}</h1>
+			</div>`
+		});
+
+		dataDiv.innerHTML = allData;
+	}
+
+	loadData(api);
+
+	const searchData = ()=>{
+		let searchValue = searchInp.value;
+		let myApi;
+		if(searchValue == ''){
+			 myApi = api;
+		}else{
+			 myApi = `https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=${searchValue}`;
+		}
+		//console.log(searchValue)
+		
+
+		 loadData(myApi);
+	}
+
+	const pageInput = document.querySelector('#pageInput');
+	const changePage = (pageNo = Number(pageInput.value))=>{
+		pageNo = (pageNo > 500) ? 500 : pageNo;
+		pageNo = (pageNo < 1) ? 1 : pageNo;
+
+
+		let btns = '';
+
+		let start = pageNo - 4;
+		let limit = pageNo + 4;
+		start = (start < 1) ? 1 : start;
+		limit = (limit > 500) ? 500 : limit;
+
+
+
+		btns += `<button onclick="changePage(1)">First</button>`;
+
+
+		if(pageNo > 13){
+			btns += `<button onclick="changePage(${pageNo - 13})">${pageNo - 13}</button>`;
+			btns += `<button onclick="changePage(${pageNo - 12})">${pageNo - 12}</button>`;
+			btns += `<button onclick="changePage(${pageNo - 11})">${pageNo - 11}</button> ......`;
+		}
+
+		for(let i = start; i <= limit; i++){
+
+
+			if(i == pageNo){
+				btns += `<button onclick="changePage(${i})" class="activePageBtn">${i}</button>`;
+			}else{
+				btns += `<button onclick="changePage(${i})">${i}</button>`;
+			}
+			
+		}
+
+		if(pageNo < 486){
+			btns += `.....<button onclick="changePage(${pageNo + 13})">${pageNo + 13}</button>`;
+			btns += `<button onclick="changePage(${pageNo + 12})">${pageNo + 12}</button>`;
+			btns += `<button onclick="changePage(${pageNo + 11})">${pageNo + 11}</button>`;
+		}
+
+		btns += `<button onclick="changePage(500)">Last</button>`;
+		paginationBtns.innerHTML = btns;
+
+		const apiPage = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc			&api_key=04c35731a5ee918f014970082a0088b1&page=${pageNo}`;
+
+		loadData(apiPage);
+		pageInput.value = '';
+	};
+
+	changePage(1);
+
+	
+	const openPopUp =async (itemId)=>{
+		const pageno = Number(document.querySelector('.activePageBtn').innerHTML);
+		//let pageno =activePageBtn.innerHTML;
+		//console.log(pageno)
+		let currentdata = await fetch(`https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc			&api_key=04c35731a5ee918f014970082a0088b1&page=${pageno}`);
+		let {results} = await currentdata.json();
+		
+		let myData = results.filter(el => el = el.id == itemId);
+		console.log(myData);
+
+	}
+</script>
+</html>
